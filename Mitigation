@@ -1,0 +1,21 @@
+# Mitigation
+
+Holding strongg on Win10 but we  are vulerable. If you don't have exteded support you will be vulnerable to RedSun basically forever.
+
+One mitigation I figured out might atleast stop NORMAL user to escalate to SYSTEM is the following:
+
+Block the Payload Execution (AppLocker / WDAC):
+
+Open RegEdit and navigate to HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{50d185b9-fff3-4656-92c7-e4018da4361d}
+
+BEFORE ANYTHING ELSE, EXPORT THAT REGISTRY ENTRY!
+
+You can use script "RedSun_Mitigate.bat" to open the key and make a backup (It will appear on Desktop).
+
+When regedit opens and backup is made, right click on the key {50d185b9-fff3-4656-92c7-e4018da4361d} -> Permissions -> Advanced. You will see owner is TrustedInstaller, we will change it to Administrator. 
+
+Click Change and type in the box ADMINISTRATORS and then hit Check Names. Check the box that says "Replace owner on subcontainers and objects", then hit Apply.
+
+That is it. I still recommend 0patch but atleast you have some protection against this nasty exploit because now attacker needs to be admin or else exploit will return ACCESS_DENIED.
+
+Keep strong Win 10 brothers and sisters!
