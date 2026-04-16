@@ -1,6 +1,6 @@
 # Mitigation
 
-Holding strongg on Win10 but we  are vulerable. If you don't have exteded support you will be vulnerable to RedSun basically forever.
+Holding strong on Win10 but we are vulerable. If you don't have exteded support you will be vulnerable to RedSun basically forever.
 
 One mitigation I figured out might atleast stop NORMAL user to escalate to SYSTEM is the following:
 
